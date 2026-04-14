@@ -3,75 +3,83 @@ body {
   background: black;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* コンテナ */
+/* 全体 */
 .container {
   position: relative;
-  width: 100%;
-  max-width: 800px;
+  width: 90vw;
+  max-width: 500px;
+  aspect-ratio: 1/1;
 }
 
-/* 画像は絶対に全部見せる */
-.main-img {
-  width: 100%;
-  height: auto;   /* ←切れない最重要 */
-  display: block;
-  pointer-events: none; /* ←クリック邪魔しない */
-}
-
-/* 共通ボタン */
-.circle,
-.center {
+/* 共通（クリックできる円） */
+.circle, .center {
   position: absolute;
-  display: block;
-  z-index: 10;
-  background: rgba(255,255,255,0.1); /* デバッグ用 */
-}
-
-/* 丸 */
-.circle {
-  width: 13%;
-  height: 13%;
   border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-/* 上 */
-.top {
-  top: 4%;
-  left: 50%;
-  transform: translateX(-50%);
+/* ホバー（PC用） */
+.circle:hover, .center:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 
-/* 右 */
-.right {
-  top: 33%;
-  right: 6%;
-}
-
-/* 右下 */
-.bottom-right {
-  bottom: 7%;
-  right: 20%;
-}
-
-/* 左下 */
-.bottom-left {
-  bottom: 7%;
-  left: 20%;
-}
-
-/* 左 */
-.left {
-  top: 33%;
-  left: 6%;
-}
-
-/* 中央（大きめクリック領域） */
+/* 中央テキスト */
 .center {
-  width: 38%;
-  height: 18%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  top: 35%;
+  left: 35%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* 周りの5つ（位置） */
+.c1 {
+  top: 0%;
+  left: 35%;
+  width: 25%;
+  height: 25%;
+  background: url('img1.jpg') center/cover;
+}
+
+.c2 {
+  top: 20%;
+  right: 0%;
+  width: 25%;
+  height: 25%;
+  background: url('img2.jpg') center/cover;
+}
+
+.c3 {
+  bottom: 0%;
+  right: 15%;
+  width: 25%;
+  height: 25%;
+  background: url('img3.jpg') center/cover;
+}
+
+.c4 {
+  bottom: 0%;
+  left: 15%;
+  width: 25%;
+  height: 25%;
+  background: url('img4.jpg') center/cover;
+}
+
+.c5 {
+  top: 20%;
+  left: 0%;
+  width: 25%;
+  height: 25%;
+  background: url('img5.jpg') center/cover;
 }
