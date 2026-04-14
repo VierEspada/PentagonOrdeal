@@ -1,29 +1,36 @@
 body {
   margin: 0;
   background: black;
+  display: flex;
+  justify-content: center;
 }
 
-.main-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-}
-
-/* 画像の比率を固定 */
+/* コンテナ */
 .container {
   position: relative;
   width: 100%;
   max-width: 800px;
-  aspect-ratio: 1 / 1; /* ← 超重要 */
-  margin: auto;
 }
 
+/* 画像は絶対に全部見せる */
+.main-img {
+  width: 100%;
+  height: auto;   /* ←切れない最重要 */
+  display: block;
+  pointer-events: none; /* ←クリック邪魔しない */
+}
 
-
-/* 共通（丸） */
-.circle {
+/* 共通ボタン */
+.circle,
+.center {
   position: absolute;
+  display: block;
+  z-index: 10;
+  background: rgba(255,255,255,0.1); /* デバッグ用 */
+}
+
+/* 丸 */
+.circle {
   width: 13%;
   height: 13%;
   border-radius: 50%;
@@ -60,17 +67,11 @@ body {
   left: 6%;
 }
 
-/* 中央 */
+/* 中央（大きめクリック領域） */
 .center {
-  position: absolute;
   width: 38%;
   height: 18%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-/* デバッグ用（調整終わったら消す） */
-.circle, .center {
-  background: rgba(255,255,255,0.1);
 }
