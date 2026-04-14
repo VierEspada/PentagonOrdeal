@@ -3,6 +3,13 @@ body {
   background: black;
 }
 
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
 /* 画像の比率を固定 */
 .container {
   position: relative;
@@ -12,11 +19,7 @@ body {
   margin: auto;
 }
 
-.main-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+
 
 /* 共通（丸） */
 .circle {
