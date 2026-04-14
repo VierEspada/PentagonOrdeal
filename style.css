@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  background: black;
+}
+
+/* 画像の比率を固定 */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1 / 1; /* ← 超重要 */
+  margin: auto;
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 共通（丸） */
+.circle {
+  position: absolute;
+  width: 13%;
+  height: 13%;
+  border-radius: 50%;
+}
+
+/* 上 */
+.top {
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 右 */
+.right {
+  top: 33%;
+  right: 6%;
+}
+
+/* 右下 */
+.bottom-right {
+  bottom: 7%;
+  right: 20%;
+}
+
+/* 左下 */
+.bottom-left {
+  bottom: 7%;
+  left: 20%;
+}
+
+/* 左 */
+.left {
+  top: 33%;
+  left: 6%;
+}
+
+/* 中央 */
+.center {
+  position: absolute;
+  width: 38%;
+  height: 18%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* デバッグ用（調整終わったら消す） */
+.circle, .center {
+  background: rgba(255,255,255,0.1);
+}
