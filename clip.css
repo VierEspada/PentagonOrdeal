@@ -1,1 +1,64 @@
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: sans-serif;
+}
 
+/* タイトル */
+.title {
+  text-align: center;
+  color: #00d5ff;
+  padding: 20px;
+  letter-spacing: 3px;
+}
+
+/* コンテナ */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* 動画カード */
+.video {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+
+  border: 1px solid rgba(0,213,255,0.5);
+  box-shadow: 0 0 10px rgba(0,213,255,0.3);
+  transition: 0.3s;
+}
+
+/* ホバーで発光 */
+.video:hover {
+  box-shadow:
+    0 0 20px rgba(0,213,255,0.8),
+    0 0 40px rgba(0,213,255,0.5);
+}
+
+/* 動画本体 */
+video {
+  width: 100%;
+  display: block;
+}
+
+/* 戻るボタン */
+.back {
+  display: block;
+  width: 200px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #00d5ff;
+  color: #00d5ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back:hover {
+  background: #00d5ff;
+  color: black;
+}
