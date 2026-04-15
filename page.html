@@ -1,31 +1,139 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page</title>
-  <link rel="stylesheet" href="page.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sky UI</title>
+
+<style>
+body {
+  margin: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* コンテナ */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* 画像 */
+.main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== SFボタン ===== */
+.btn {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #e0f7ff;
+  font-size: 14px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 背景に馴染む */
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), rgba(0,0,0,0.7));
+  border: 1px solid rgba(180,220,255,0.6);
+
+  /* 発光 */
+  box-shadow:
+    0 0 10px rgba(0,180,255,0.6),
+    inset 0 0 15px rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(8px);
+
+  transition: 0.3s;
+}
+
+/* 中の光 */
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background: rgba(0,200,255,0.8);
+  border-radius: 50%;
+  filter: blur(6px);
+}
+
+/* ホバー */
+.btn:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 20px rgba(0,200,255,1),
+    0 0 40px rgba(0,200,255,0.6);
+}
+
+/* ===== 配置（中央の建造物を避けてる） ===== */
+
+/* 左上 */
+.btn1 {
+  top: 8%;
+  left: 12%;
+}
+
+/* 右上 */
+.btn2 {
+  top: 8%;
+  right: 12%;
+}
+
+/* 左中央 */
+.btn3 {
+  top: 45%;
+  left: 3%;
+}
+
+/* 右中央 */
+.btn4 {
+  top: 45%;
+  right: 3%;
+}
+
+/* 下中央 */
+.btn5 {
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  .btn {
+    width: 70px;
+    height: 70px;
+    font-size: 11px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- 最初は暗転状態 -->
-  <div class="blackout active"></div>
+<div class="container">
+  <!-- 画像 -->
+  <img src="your-image.jpg" class="main-img">
 
-  <div class="container">
-    <img src="page.jpg" class="bg">
-  </div>
-
-  <script>
-    const blackout = document.querySelector(".blackout");
-
-    window.addEventListener("load", () => {
-      document.body.classList.add("show");
-
-      setTimeout(() => {
-        blackout.classList.remove("active");
-      }, 300);
-    });
-  </script>
+  <!-- ボタン -->
+  <a href="page1.html" class="btn btn1">AREA 1</a>
+  <a href="page2.html" class="btn btn2">AREA 2</a>
+  <a href="page3.html" class="btn btn3">AREA 3</a>
+  <a href="page4.html" class="btn btn4">AREA 4</a>
+  <a href="page5.html" class="btn btn5">ENTER</a>
+</div>
 
 </body>
 </html>
