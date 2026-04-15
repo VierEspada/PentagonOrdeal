@@ -1,47 +1,39 @@
 body {
   margin: 0;
   background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .container {
   position: relative;
-  width: 90vw;
-  max-width: 500px;
+  width: 100vw;
+  height: 100vh;
 }
 
-/* 背景 */
+/* 画像 */
 .bg {
-  width: 100%;
-  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
 }
 
-/* 透明クリックエリア */
+/* 共通ヒットボックス */
 .hit {
   position: absolute;
-  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+
+  /* デバッグ用（あとで消す） */
+  background: rgba(255, 0, 0, 0.2);
 }
 
-/* デバッグ用（位置確認したいときだけON） */
-/*
-.hit {
-  background: rgba(255,0,0,0.3);
-}
-*/
-
-/* 位置（あとで微調整OK） */
-.c1 { top: 5%; left: 37%; width: 20%; height: 20%; }
-.c2 { top: 25%; right: 5%; width: 20%; height: 20%; }
-.c3 { bottom: 5%; right: 20%; width: 20%; height: 20%; }
-.c4 { bottom: 5%; left: 20%; width: 20%; height: 20%; }
-.c5 { top: 25%; left: 5%; width: 20%; height: 20%; }
-
+/* 中央（比率指定） */
 .center {
-  top: 35%;
-  left: 35%;
-  width: 30%;
-  height: 30%;
+  left: 50%;
+  top: 50.8%;
+
+  width: 28%;
+  height: 12%;
 }
