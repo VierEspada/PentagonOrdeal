@@ -8,9 +8,24 @@
 </head>
 <body>
 
+  <!-- 最初は暗転状態 -->
+  <div class="blackout active"></div>
+
   <div class="container">
     <img src="page.jpg" class="bg">
   </div>
+
+  <script>
+    const blackout = document.querySelector(".blackout");
+
+    window.addEventListener("load", () => {
+      document.body.classList.add("show");
+
+      setTimeout(() => {
+        blackout.classList.remove("active");
+      }, 300);
+    });
+  </script>
 
 </body>
 </html>
