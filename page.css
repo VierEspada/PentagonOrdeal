@@ -62,7 +62,7 @@ body {
 
 /* ホバー */
 .btn:hover {
-  transform: scale(1.15);
+  transform: trancelateX(-50%) scale(1.15);
   box-shadow:
     0 0 20px rgba(0,200,255,1),
     0 0 40px rgba(0,200,255,0.6);
@@ -98,7 +98,7 @@ body {
 .btn5 {
   bottom: 8%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(1);
 }
 
 /* ===== スマホ対応 ===== */
