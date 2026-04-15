@@ -22,14 +22,12 @@
 
   </div>
 
-  <!-- 暗転 -->
   <div class="blackout"></div>
 
   <script>
     const blackout = document.querySelector(".blackout");
     const star = document.querySelector(".star");
 
-    // フェードイン
     window.addEventListener("load", () => {
       document.body.classList.add("show");
     });
@@ -38,15 +36,12 @@
       link.addEventListener("click", e => {
         e.preventDefault();
 
-        // 星発光
         star.classList.add("active");
 
-        // 暗転
         setTimeout(() => {
           blackout.classList.add("active");
         }, 400);
 
-        // 遷移
         setTimeout(() => {
           window.location.href = link.href;
         }, 900);
