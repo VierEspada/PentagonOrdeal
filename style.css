@@ -33,8 +33,7 @@ body.show {
   cursor: pointer;
   z-index: 10;
 
-  /* デバッグ用 */
-  background: rgba(255,0,0,0.2);
+  
 }
 
 /* 中央 */
