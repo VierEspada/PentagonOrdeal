@@ -1,1 +1,117 @@
+body {
+  margin: 0;
+  background: black;
+  font-family: sans-serif;
+}
 
+/* グリッド */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+/* カード */
+.clip {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid #00d5ff;
+  background: rgba(0, 20, 30, 0.6);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+/* サムネ */
+.clip img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* 名前 */
+.name {
+  padding: 10px;
+  color: #00d5ff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ホバー */
+.clip:hover {
+  transform: scale(1.05);
+  background: #00d5ff;
+}
+
+.clip:hover .name {
+  color: black;
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* カード本体 */
+.clip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid rgba(0, 213, 255, 0.5);
+  background: rgba(0, 20, 30, 0.6);
+  overflow: hidden;
+  transition: 0.3s;
+
+  /* 常にうっすら光る */
+  box-shadow: 0 0 10px rgba(0, 213, 255, 0.3);
+}
+
+/* ホバーで強く発光 */
+.clip:hover {
+  transform: scale(1.05);
+  background: rgba(0, 213, 255, 0.15);
+
+  box-shadow:
+    0 0 20px rgba(0, 213, 255, 0.8),
+    0 0 40px rgba(0, 213, 255, 0.6),
+    0 0 60px rgba(0, 213, 255, 0.4);
+}
+
+/* 枠も光る */
+.clip:hover {
+  border: 1px solid #00d5ff;
+}
+.clip::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0, 213, 255, 0.4),
+    transparent
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.clip:hover::before {
+  opacity: 1;
+  animation: shine 1s linear;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  to {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
