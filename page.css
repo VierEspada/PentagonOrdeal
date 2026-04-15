@@ -98,7 +98,8 @@ body {
 .btn5 {
   bottom: 8%;
   left: 50%;
-  
+  right: 0;
+  margin: auto;
 }
 
 /* ===== スマホ対応 ===== */
