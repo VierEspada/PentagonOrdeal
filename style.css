@@ -1,7 +1,6 @@
 body {
   margin: 0;
   background: black;
-
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -16,7 +15,6 @@ body.show {
   height: 100vh;
 }
 
-/* 背景 */
 .bg {
   position: absolute;
   top: 50%;
@@ -26,17 +24,13 @@ body.show {
   max-height: 100%;
 }
 
-/* クリック領域 */
 .hit {
   position: absolute;
   transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 10;
-
-  
 }
 
-/* 中央 */
 .center {
   left: 50%;
   top: 50.8%;
